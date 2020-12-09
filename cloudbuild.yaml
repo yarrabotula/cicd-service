@@ -16,7 +16,7 @@ steps:
   args:
   - 'set'
   - 'image'
-  - 'deployment/hello-world-service'
+  - 'deployment/deployment.yaml'
   - 'hello-world-service=gcr.io/brilliant-scene-290913/venkatjob:latest'
   env:
   - 'CLOUDSDK_COMPUTE_ZONE=europe-west2-a'
@@ -29,7 +29,7 @@ substitutions:
     _GKE_CLUSTER: kubernetesproject
     
     #Repository Specific configuration. DevOps can change this settings
-    _DEPLOYMENTNAME: hello-world-service
+    _DEPLOYMENTNAME: deployment.yaml
     _CONTAINERNAME: hello-world-service    
     _REPO_NAME: cicd-service
     
