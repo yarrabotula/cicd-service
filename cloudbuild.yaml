@@ -29,7 +29,7 @@ substitutions:
     _GKE_CLUSTER: kubernetesproject
     
     #Repository Specific configuration. DevOps can change this settings
-    _DEPLOYMENTNAME: deployment.yaml
+    _DEPLOYMENT: deployment.yaml
     _CONTAINERNAME: hello-world-service    
     _REPO_NAME: cicd-service
     
