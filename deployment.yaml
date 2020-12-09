@@ -17,7 +17,7 @@ spec:
     spec:
       containers:
       - name: docker-hello-world
-        image: scottsbaldwin/docker-hello-world:latest
+        image: gcr.io/brilliant-scene-290913/venkatjob:latest
         ports:
         - containerPort: 80
 ---
