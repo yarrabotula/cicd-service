@@ -19,13 +19,13 @@ steps:
   - 'deployment/deployment.yaml'
   - 'hello-world-service=gcr.io/bristol-302417/venkatjob:latest'
   env:
-  - 'CLOUDSDK_COMPUTE_ZONE=europe-west2-a'
+  - 'CLOUDSDK_COMPUTE_ZONE=us-central1-a'
   - 'CLOUDSDK_CONTAINER_CLUSTER=kubernetesproject'
   
 substitutions:
     #GCP Specific configuration. Please DON'T change anything
     _PROJECT: bristol-302417
-    _ZONE: europe-west2-a
+    _ZONE: us-central1-a
     _GKE_CLUSTER: kubernetesproject
     
     #Repository Specific configuration. DevOps can change this settings
