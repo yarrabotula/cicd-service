@@ -5,11 +5,11 @@ steps:
 
 #Build the image 
 - name: 'gcr.io/cloud-builders/docker'
-  args: ['build','-t','gcr.io/brilliant-scene-290913/venkatjob:latest','.']
+  args: ['build','-t','gcr.io/bristol-302417/venkatjob:latest','.']
 
 #Push the image  
 - name: 'gcr.io/cloud-builders/docker'
-  args: ['push','gcr.io/brilliant-scene-290913/venkatjob:latest']
+  args: ['push','gcr.io/bristol-302417/venkatjob:latest']
   
 #Update the container image using kubectl set
 - name: 'gcr.io/cloud-builders/kubectl'
@@ -17,14 +17,14 @@ steps:
   - 'set'
   - 'image'
   - 'deployment/deployment.yaml'
-  - 'hello-world-service=gcr.io/brilliant-scene-290913/venkatjob:latest'
+  - 'hello-world-service=gcr.io/bristol-302417/venkatjob:latest'
   env:
   - 'CLOUDSDK_COMPUTE_ZONE=europe-west2-a'
   - 'CLOUDSDK_CONTAINER_CLUSTER=kubernetesproject'
   
 substitutions:
     #GCP Specific configuration. Please DON'T change anything
-    _PROJECT: brilliant-scene-290913
+    _PROJECT: bristol-302417
     _ZONE: europe-west2-a
     _GKE_CLUSTER: kubernetesproject
     
