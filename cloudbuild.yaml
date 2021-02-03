@@ -5,11 +5,11 @@ steps:
 
 #Build the image 
 - name: 'gcr.io/cloud-builders/docker'
-  args: ['build','-t','gcr.io/bristol-302417/venkatjob:latest','.']
+  args: ['build','-t','gcr.io/bristol-302417/hello-GKE:latest','.']
 
 #Push the image  
 - name: 'gcr.io/cloud-builders/docker'
-  args: ['push','gcr.io/bristol-302417/venkatjob:latest']
+  args: ['push','gcr.io/bristol-302417/hello-GKE:latest']
   
 #Update the container image using kubectl set
 - name: 'gcr.io/cloud-builders/kubectl'
