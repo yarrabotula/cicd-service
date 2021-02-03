@@ -13,29 +13,23 @@ steps:
   
 #Update the container image using kubectl set
 - name: 'gcr.io/cloud-builders/kubectl'
+
   args:
-  - 'set'
-  - 'image'
-  - 'deployment'
-  - 'hello-world-service=gcr.io/bristol-302417/venkatjob:latest'
+  - delete  
+  - deployment
+  - hello-GKE
+  - --ignore-not-found
   env:
-  - 'CLOUDSDK_COMPUTE_ZONE=europe-west2-c'
-  - 'CLOUDSDK_CONTAINER_CLUSTER=kubernetes'
+  - CLOUDSDK_COMPUTE_ZONE=europe-west2-c
+  - CLOUDSDK_CONTAINER_CLUSTER=kubernetes
+- name: 'gcr.io/cloud-builders/kubectl'
+  args:
+  - run
+  - hello-GKE
+  - --image=gcr.io/bristol-302417/hello-GKE
+  env:
+  - CLOUDSDK_COMPUTE_ZONE=europe-west2-c
+  - CLOUDSDK_CONTAINER_CLUSTER=kubernetes
   
-substitutions:
-    #GCP Specific configuration. Please DON'T change anything
-    _PROJECT: bristol-302417
-    _ZONE: europe-west2-c
-    _GKE_CLUSTER: kubernetes
-    
-    #Repository Specific configuration. DevOps can change this settings
-    _DEPLOYMENT: deployment.yaml
-    _CONTAINERNAME: hello-world-service    
-    _REPO_NAME: cicd-service
-    
-    # Developers ONLY change
-    _VERSION: v1.0
-    
-options:
-    substitution_option: 'ALLOW_LOOSE'
+
 
