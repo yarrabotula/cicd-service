@@ -17,7 +17,7 @@ steps:
   args:
   - delete  
   - deployment
-  - hello-GKE
+  - venkatjob
   - --ignore-not-found
   env:
   - CLOUDSDK_COMPUTE_ZONE=europe-west2-c
@@ -25,7 +25,7 @@ steps:
 - name: 'gcr.io/cloud-builders/kubectl'
   args:
   - run
-  - hello-GKE
+  - venkatjob
   - --image=gcr.io/bristol-302417/venkatjob
   env:
   - CLOUDSDK_COMPUTE_ZONE=europe-west2-c
