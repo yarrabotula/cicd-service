@@ -16,7 +16,7 @@ steps:
   args:
   - 'set'
   - 'image'
-  - 'deployment/deployment.yaml'
+  - 'deployment'
   - 'hello-world-service=gcr.io/bristol-302417/venkatjob:latest'
   env:
   - 'CLOUDSDK_COMPUTE_ZONE=europe-west2-c'
